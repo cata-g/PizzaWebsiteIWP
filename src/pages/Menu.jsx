@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Copyright from "../components/Copyright";
+import Footer from "../components/Footer";
 const menuItems = {
   0: {
     name: "Pizza Hawaiana",
@@ -137,6 +138,7 @@ export default function Menu() {
   return (
     <>
       <Navbar />
+      <Footer />
       <Copyright />
     </>
   );
