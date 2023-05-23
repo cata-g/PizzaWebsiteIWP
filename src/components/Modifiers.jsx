@@ -22,8 +22,15 @@ export default function Modifiers({
 
   return (
     <div className="col-md-6 p-5">
-      <h1>Modifiers</h1>
-      <h4
+      <div class="p-3">
+      <h1 
+      style={{
+        fontFamily: "Varela Round, sans-serif"
+      }}
+      >What will be on your pizza?</h1>
+      </div>
+      
+      <div class="p-3"><h3
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#collapseSizes"
@@ -31,10 +38,13 @@ export default function Modifiers({
         aria-controls="collapseSizes"
         style={{
           overflowY: "hidden",
+          fontFamily: "Yanone Kaffeesatz, sans-serif"
         }}
       >
         Sizes
-      </h4>
+      </h3>
+      </div>
+      
       <div class="collapse" id="collapseSizes">
         <div class="card card-body">
           <SizeButton
@@ -64,7 +74,8 @@ export default function Modifiers({
         </div>
       </div>
 
-      <h4
+        <div class="p-3">
+          <h3
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#collapseIngredients"
@@ -72,10 +83,13 @@ export default function Modifiers({
         aria-controls="collapseIngredients"
         style={{
           overflowY: "hidden",
+          fontFamily: "Yanone Kaffeesatz, sans-serif"
         }}
       >
         Ingredients
-      </h4>
+      </h3>
+      </div>
+      
       <div class="collapse" id="collapseIngredients">
         <div class="card card-body">
           <IngredientButton
