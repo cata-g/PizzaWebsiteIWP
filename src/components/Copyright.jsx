@@ -12,7 +12,7 @@ export default function Copyright() {
         Powered By Barabas Catalin & Dumitru Vlad
       </p>
       <p
-        class="float-end"
+        className="float-end"
         style={{
           fontFamily: "Varela Round, sans-serif",
         }}
