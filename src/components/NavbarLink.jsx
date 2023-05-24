@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 export default function NavbarLink({ name, link }) {
   return (
     <li className="nav-item p-2">

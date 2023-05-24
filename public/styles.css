@@ -110,3 +110,126 @@ body {
 .black50 {
   color: var(--black-50);
 }
+
+.gallery-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.gallery-item img {
+  border-radius: 30px;
+  height: 400px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img:active {
+  transform: scale(1);
+}
+
+#containerMenu {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.menu-img {
+  border-radius: 20px;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.menu-img:hover {
+  transform: scale(1.05);
+}
+
+.menu-name {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 500;
+  color: var(--primary);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.menu-list li {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--black75);
+  margin-bottom: 5px;
+}
+
+.contact-container {
+  margin-top: 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  
+}
+
+.contact-container h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  color: var(--primary);
+}
+
+.contact-container h4 {
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+    font-family: "Varela Round", sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+.contact-container img {
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 80%;
+  height: auto;
+  
+}
+
+.form-group label {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.form-control {
+  height: 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+textarea.form-control {
+  resize: vertical; 
+}
+
+
+
+
+

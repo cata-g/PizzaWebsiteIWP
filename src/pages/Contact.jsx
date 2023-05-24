@@ -9,7 +9,7 @@ export default function Contact() {
     <>
       <Navbar />
       <div
-        className="container p-3"
+        className="container p-3 contact-container"
         style={{
           backgroundColor: "white",
           borderRadius: "20px",
@@ -34,49 +34,39 @@ export default function Contact() {
           </div>
           <div className="col-md-6">
             <div className="form-group">
-              <label for="inputName">Name</label>
+              <label htmlFor="inputName">Name</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputName"
                 placeholder="Enter your name"
               />
             </div>
 
             <div className="form-group">
-              <label for="inputEmail">Email</label>
+              <label htmlFor="inputEmail">Email</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputEmail"
                 placeholder="Enter your email"
               />
             </div>
 
             <div className="form-group">
-              <label for="inputSubject">Subject</label>
+              <label htmlFor="inputSubject">Subject</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputSubject"
                 placeholder="Enter the subject"
               />
             </div>
 
             <div className="form-group">
-              <label for="inputName">Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="inputName"
-                placeholder="Enter your name"
-              />
-            </div>
-
-            <div className="form-group">
-              <label for="inputMessage">Message</label>
+              <label htmlFor="inputMessage">Message</label>
               <textarea
-                class="form-control"
+                className="form-control"
                 id="inputMessage"
                 rows="5"
               ></textarea>
