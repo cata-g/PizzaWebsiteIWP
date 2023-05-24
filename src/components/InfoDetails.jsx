@@ -7,8 +7,8 @@ export default function InfoDetails() {
         <h1 className="mb-2 portocaliu">
           Eat well, Eat Creative, Live Creative.
         </h1>
-        <p style={{ fontSize: "20px" }} className="px-5 py-3 mb-1">
-          We are xxxxxxxxxx, a culinary destination rooted in creativity and
+        <p style={{ fontSize: "20px", fontFamily:"Varela Round, sans-serif"}} className="px-5 py-3 mb-1">
+          We are <span style={{fontFamily:"Yanone Kaffeesatz, sans-serif", fontSize:"28px", color:"var(--secondary)"}}>FreshFILS Pizza</span> , a culinary destination rooted in creativity and
           passion. Feel free to explore the process of creating your own pizza
           with our intentionally-sourced ingredients or browse our diverse menu.
           Remember, creativity comes with every bite.

@@ -24,6 +24,8 @@ h1 {
   font-weight: 400;
 }
 
+/* HERO */
+/* main button */
 .button1 {
   align-items: center;
   background-color: var(--primary);
@@ -111,6 +113,7 @@ body {
   color: var(--black-50);
 }
 
+/* Gallery */
 .gallery-item {
   display: flex;
   justify-content: center;
@@ -133,6 +136,7 @@ body {
   transform: scale(1);
 }
 
+/* Menu */
 #containerMenu {
   background-color: #f8f8f8;
   border-radius: 10px;
@@ -174,6 +178,7 @@ body {
   margin-bottom: 5px;
 }
 
+/* Contact Us */
 .contact-container {
   margin-top: 20px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
@@ -229,7 +234,36 @@ textarea.form-control {
   resize: vertical; 
 }
 
+/* Copyright */
+div.copyright {
+  padding: 10px;
+  background-color: inherit;
+  text-align: center;
+  font-family: "Varela Round", sans-serif;
+  color: var(--black75);
+}
 
+p.powered-by {
+  float: left;
+  font-weight: bold;
+  margin: 0;
+}
+
+p.all-rights {
+  float: right;
+  margin: 0;
+}
+
+p.powered-by:hover {
+  color: #ff7f50;
+}
+
+@media (max-width: 767px) {
+  p.powered-by,
+  p.all-rights {
+    float: none;
+  }
+}
 
 
 
