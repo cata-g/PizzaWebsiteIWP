@@ -2,29 +2,6 @@ import React from "react";
 import NavbarLink from "./NavbarLink";
 import { Outlet } from "react-router-dom";
 
-const links = [
-  {
-    name: "Home",
-    link: "/",
-  },
-  {
-    name: "Menu",
-    link: "/menu",
-  },
-  {
-    name: "Create Your Own",
-    link: "/create-your-own",
-  },
-  {
-    name: "Gallery",
-    link: "/gallery",
-  },
-  {
-    name: "Contact Us",
-    link: "/contact",
-  },
-];
-
 export default function Navbar() {
   return (
     <div>
