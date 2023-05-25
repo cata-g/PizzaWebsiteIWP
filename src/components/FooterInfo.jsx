@@ -25,7 +25,7 @@ export default function FooterInfo({ name, items }) {
               }}
             >
               <a
-                href={item.link}
+                href={item.href}
                 style={{
                   textDecoration: "none",
                   color: "white",

@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavbarLink from "./NavbarLink";
 import { Outlet } from "react-router-dom";
 
 export default function Navbar() {
+  const [links, setLinks] = useState([]);
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/navbar/get", {
+      method: "GET",
+      headers: {
+        "Content-Type": "applications/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((resp) => setLinks(resp))
+      .catch((error) => console.log(error));
+  });
+
   return (
     <div>
       <div className="row">
@@ -22,7 +35,7 @@ export default function Navbar() {
                   return (
                     <NavbarLink
                       name={item.name}
-                      link={item.link}
+                      link={item.href}
                       key={item.name}
                     />
                   );
