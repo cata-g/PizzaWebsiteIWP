@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MenuCard({ name, imgSrc, ingredients }) {
+export default function MenuCard({ name, imgSrc, ingredients, addToCart }) {
   return (
     <div className="col-md-3 p-3">
       <div
@@ -27,7 +27,18 @@ export default function MenuCard({ name, imgSrc, ingredients }) {
           </h1>
           <p>{ingredients}</p>
         </div>
-        <button className="btn button1">Add to Cart</button>
+        <button
+          className="btn button1"
+          onClick={() => {
+            addToCart({
+              name: name,
+              description: ingredients,
+              img: imgSrc,
+            });
+          }}
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );

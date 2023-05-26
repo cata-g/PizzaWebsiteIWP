@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import MenuCard from "../components/MenuCard";
 import { useState, useEffect } from "react";
 
-export default function Menu() {
+export default function Menu({ addToCartFunction }) {
   const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {
@@ -32,6 +32,7 @@ export default function Menu() {
                 imgSrc={item.imageSource}
                 ingredients={item.ingredients}
                 key={item.id}
+                addToCart={addToCartFunction}
               />
             );
           })}

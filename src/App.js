@@ -10,6 +10,21 @@ import Cart from "./pages/Cart";
 import { useState } from "react";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (cartObj) => {
+    var tempCart = [...cart];
+    tempCart.push(cartObj);
+    setCart(tempCart);
+    console.log(cart);
+  };
+
+  const deleteFromCart = (index) => {
+    var tempCart = [...cart];
+    delete tempCart[index];
+    setCart(tempCart);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -17,8 +32,11 @@ function App() {
         <Route path="create-your-own" element={<CreateYourOwn />} />
         <Route path="contact" element={<Contact />} />
         <Route path="gallery" element={<Gallery />} />
-        <Route path="menu" element={<Menu />} />
-        <Route path="cart" element={<Cart />} />
+        <Route path="menu" element={<Menu addToCartFunction={addToCart} />} />
+        <Route
+          path="cart"
+          element={<Cart cartItems={cart} deleteFromCart={deleteFromCart} />}
+        />
       </Routes>
     </BrowserRouter>
   );
