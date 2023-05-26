@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Copyright from "../components/Copyright";
 import Footer from "../components/Footer";
@@ -8,6 +8,11 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
   return (
     <>
       <Navbar />
@@ -72,7 +77,7 @@ export default function Contact() {
             <img src={map} alt="" height={200} width={400} />
           </div>
           <div className="col-md-6">
-            <form action="">
+            <form>
               <div className="form-group">
                 <label htmlFor="inputName">Name</label>
                 <input
@@ -80,6 +85,8 @@ export default function Contact() {
                   className="form-control"
                   id="inputName"
                   placeholder="Enter your name"
+                  name="nameFrom"
+                  onChange={(event) => setName(event.target.value)}
                 />
               </div>
 
@@ -90,6 +97,8 @@ export default function Contact() {
                   className="form-control"
                   id="inputEmail"
                   placeholder="Enter your email"
+                  name="emailFrom"
+                  onChange={(event) => setEmail(event.target.value)}
                 />
               </div>
 
@@ -100,16 +109,60 @@ export default function Contact() {
                   className="form-control"
                   id="inputSubject"
                   placeholder="Enter the subject"
+                  name="subject"
+                  onChange={(event) => setSubject(event.target.value)}
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="inputMessage">Message</label>
-                <textarea className="form-control" id="inputMessage" rows="5" />
+                <textarea
+                  className="form-control"
+                  id="inputMessage"
+                  rows="5"
+                  name="message"
+                  onChange={(event) => setMessage(event.target.value)}
+                />
               </div>
 
-              <div className="float-end">
-                <button type="submit" className="button1 btn">
+              <div className="float-end form-group">
+                <button
+                  type="submit"
+                  className="button1 btn form-control"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    console.log(name == "");
+                    if (
+                      name === "" ||
+                      email === "" ||
+                      subject === "" ||
+                      message === ""
+                    )
+                      alert("Please Complete All The Fields");
+                    else {
+                      const messageobj = {
+                        nameFrom: name,
+                        emailFrom: email,
+                        subject: subject,
+                        message: message,
+                      };
+
+                      fetch("http://localhost:5000/message/add", {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(messageobj),
+                      }).then(() => {
+                        setName("");
+                        setEmail("");
+                        setSubject("");
+                        setMessage("");
+                        alert("Message Sent!!!");
+                      });
+                    }
+                  }}
+                >
                   Send Message
                 </button>
               </div>

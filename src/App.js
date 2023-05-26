@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
+import { useState } from "react";
 
 function App() {
   return (
