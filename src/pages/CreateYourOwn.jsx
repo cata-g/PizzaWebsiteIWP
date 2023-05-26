@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Copyright from "../components/Copyright";
+import Footer from "../components/Footer";
 
 import PizzaSelector from "../components/PizzaSelector";
 import Modifiers from "../components/Modifiers";
@@ -17,7 +18,7 @@ export default function CreateYourOwn() {
       <Navbar />
       <div
         style={{ backgroundColor: "white", borderRadius: "20px" }}
-        className="p-2"
+        className="p-2 container"
       >
         <center>
           <h1 className="black50">Create your own masterpiece...</h1>
@@ -56,6 +57,7 @@ export default function CreateYourOwn() {
         </div>
         <button className="button1 float-end btn clearfix">Finish Order</button>
       </div>
+      <Footer />
       <Copyright />
     </>
   );
