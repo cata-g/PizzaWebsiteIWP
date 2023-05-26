@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -32,7 +33,7 @@ export default function Hero() {
               >
                 CREATE YOUR OWN!
               </h2>
-              <a
+              <Link
                 className="btn btn-outline-light btn-lg button1 mt-4"
                 role="button"
                 style={{
@@ -40,9 +41,10 @@ export default function Hero() {
                   fontFamily: "Varela Round, sans-serif",
                   fontSize: "16px",
                 }}
+                to="/create-your-own"
               >
                 Take Me There
-              </a>
+              </Link>
             </div>
           </div>
         </div>
