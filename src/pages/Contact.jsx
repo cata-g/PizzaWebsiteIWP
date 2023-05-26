@@ -6,7 +6,10 @@ import map from "../static/images/mapa.jpg";
 import workingHours from "../static/images/icons/working-hours.png";
 import phone from "../static/images/icons/phone.png";
 import address from "../static/images/icons/address.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 export default function Contact() {
   return (
     <>
@@ -30,41 +33,44 @@ export default function Contact() {
 
         <div className="row p-3">
           <div className="col-md-6">
-            <div className="">
-              <img
+            <p className="">
+              {/* <img
                 src={address}
                 alt=""
                 style={{
                   width: "25px",
                   height: "25px",
                 }}
-              />
-              <span>Address</span>
-            </div>
+              /> */}
+              <FontAwesomeIcon icon={faLocationDot} />
+              <span> Address</span>
+            </p>
 
-            <div className="">
-              <img
+            <p className="">
+              {/* <img
                 src={phone}
                 alt=""
                 style={{
                   width: "25px",
                   height: "25px",
                 }}
-              />
-              <span>Phone Number</span>
-            </div>
+              /> */}
+              <FontAwesomeIcon icon={faPhone} />
+              <span> Phone Number</span>
+            </p>
 
-            <div className="">
-              <img
+            <p className="">
+              {/* <img
                 src={workingHours}
                 alt=""
                 style={{
                   width: "25px",
                   height: "25px",
                 }}
-              />
-              <span>Working Hours</span>
-            </div>
+              /> */}
+              <FontAwesomeIcon icon={faCalendar} />
+              <span> Working Hours</span>
+            </p>
 
             <img src={map} alt="" height={200} width={400} />
           </div>
