@@ -8,7 +8,6 @@ export default function GalleryItem({ col, imgSrc }) {
         style={{
           borderRadius: "30px",
           height: "400px",
-
         }}
       />
     </div>
