@@ -131,7 +131,6 @@ export default function Contact() {
                   className="button1 btn form-control"
                   onClick={(e) => {
                     e.preventDefault();
-                    console.log(name == "");
                     if (
                       name === "" ||
                       email === "" ||
