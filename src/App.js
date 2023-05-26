@@ -20,8 +20,9 @@ function App() {
   };
 
   const deleteFromCart = (index) => {
-    var tempCart = [...cart];
-    delete tempCart[index];
+    var tempCart = [...cart].filter((itm, indexItem) => {
+      return indexItem !== index;
+    });
     setCart(tempCart);
   };
 

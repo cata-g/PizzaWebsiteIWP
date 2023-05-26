@@ -17,7 +17,10 @@ export default function Cart({ cartItems, deleteFromCart }) {
             <p>{itm.description}</p>
             <button
               className="btn btn-danger"
-              onClick={() => deleteFromCart(index)}
+              onClick={() => {
+                deleteFromCart(index);
+                console.log(cartItems);
+              }}
             >
               Delete Me
             </button>
