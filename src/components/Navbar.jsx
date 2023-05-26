@@ -14,7 +14,7 @@ export default function Navbar() {
       .then((resp) => resp.json())
       .then((resp) => setLinks(resp))
       .catch((error) => console.log(error));
-  });
+  }, []);
 
   return (
     <div>

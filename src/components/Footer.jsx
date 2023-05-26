@@ -13,7 +13,7 @@ export default function Footer() {
       .then((resp) => resp.json())
       .then((resp) => setInfo(resp))
       .catch((error) => console.log(error));
-  });
+  }, []);
 
   return (
     <section className="footerImage mt-5">
