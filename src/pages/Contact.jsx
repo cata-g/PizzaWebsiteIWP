@@ -3,6 +3,9 @@ import Navbar from "../components/Navbar";
 import Copyright from "../components/Copyright";
 import Footer from "../components/Footer";
 import map from "../static/images/mapa.jpg";
+import workingHours from "../static/images/icons/working-hours.png";
+import phone from "../static/images/icons/phone.png";
+import address from "../static/images/icons/address.png";
 
 export default function Contact() {
   return (
@@ -27,50 +30,87 @@ export default function Contact() {
 
         <div className="row p-3">
           <div className="col-md-6">
-            <p>Address</p>
-            <p>Phone Number</p>
-            <p>Working Hours</p>
+            <div className="">
+              <img
+                src={address}
+                alt=""
+                style={{
+                  width: "25px",
+                  height: "25px",
+                }}
+              />
+              <span>Address</span>
+            </div>
+
+            <div className="">
+              <img
+                src={phone}
+                alt=""
+                style={{
+                  width: "25px",
+                  height: "25px",
+                }}
+              />
+              <span>Phone Number</span>
+            </div>
+
+            <div className="">
+              <img
+                src={workingHours}
+                alt=""
+                style={{
+                  width: "25px",
+                  height: "25px",
+                }}
+              />
+              <span>Working Hours</span>
+            </div>
+
             <img src={map} alt="" height={200} width={400} />
           </div>
           <div className="col-md-6">
-            <div className="form-group">
-              <label htmlFor="inputName">Name</label>
-              <input
-                type="text"
-                className="form-control"
-                id="inputName"
-                placeholder="Enter your name"
-              />
-            </div>
+            <form action="">
+              <div className="form-group">
+                <label htmlFor="inputName">Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="inputName"
+                  placeholder="Enter your name"
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="inputEmail">Email</label>
-              <input
-                type="text"
-                className="form-control"
-                id="inputEmail"
-                placeholder="Enter your email"
-              />
-            </div>
+              <div className="form-group">
+                <label htmlFor="inputEmail">Email</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="inputEmail"
+                  placeholder="Enter your email"
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="inputSubject">Subject</label>
-              <input
-                type="text"
-                className="form-control"
-                id="inputSubject"
-                placeholder="Enter the subject"
-              />
-            </div>
+              <div className="form-group">
+                <label htmlFor="inputSubject">Subject</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="inputSubject"
+                  placeholder="Enter the subject"
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="inputMessage">Message</label>
-              <textarea
-                className="form-control"
-                id="inputMessage"
-                rows="5"
-              ></textarea>
-            </div>
+              <div className="form-group">
+                <label htmlFor="inputMessage">Message</label>
+                <textarea className="form-control" id="inputMessage" rows="5" />
+              </div>
+
+              <div className="float-end">
+                <button type="submit" className="button1 btn">
+                  Send Message
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
