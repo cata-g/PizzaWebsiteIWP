@@ -6,6 +6,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Menu from "./pages/Menu";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="menu" element={<Menu />} />
+        <Route path="cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );
