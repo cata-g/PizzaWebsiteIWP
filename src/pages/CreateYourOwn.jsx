@@ -26,7 +26,7 @@ export default function CreateYourOwn({ addToCartFunction }) {
         className="p-2 container"
       >
         <center>
-          <h1 className="black50">Create your own masterpiece...</h1>
+          <h1 style={{color:"var(--primary)"}}>Create your own masterpiece...</h1>
         </center>
         <div
           className="row"

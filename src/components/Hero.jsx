@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import {faPizzaSlice} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Hero() {
   return (
@@ -34,7 +36,7 @@ export default function Hero() {
                 CREATE YOUR OWN!
               </h2>
               <Link
-                className="btn btn-outline-light btn-lg button1 mt-4"
+                className="btn btn-outline-light btn-lg buttonhero mt-4"
                 role="button"
                 style={{
                   textTransform: "uppercase",
@@ -43,7 +45,8 @@ export default function Hero() {
                 }}
                 to="/create-your-own"
               >
-                Take Me There
+                Take Me There   
+                <FontAwesomeIcon icon={faPizzaSlice} />
               </Link>
             </div>
           </div>

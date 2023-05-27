@@ -1,4 +1,6 @@
 import React from "react";
+import Swal from "sweetalert2";
+import "animate.css/animate.min.css";
 
 export default function MenuCard({
   name,
@@ -43,7 +45,10 @@ export default function MenuCard({
               img: imgSrc,
             });
 
-            alert(name + " added to cart! Go to checkout!");
+            Swal.fire({
+              title: 'Added to Cart!',
+              text: 'Check your cart to see your order',
+            })
           }}
         >
           Add to Cart

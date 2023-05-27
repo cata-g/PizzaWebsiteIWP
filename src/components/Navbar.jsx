@@ -21,9 +21,18 @@ export default function Navbar() {
     <div>
       <div className="row">
         <div className="col-md-1">
-          <p className="p-4" style={{ color: "white" }}>
-            Logo
-          </p>
+          {/* image */}
+          <Link to="/">
+            <img
+              src="https://i.imgur.com/GNrd9z0.png"
+              alt="logo"
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+            />
+          </Link>
+
         </div>
         <div className="col-md-10">
           <nav className="navbar navbar-expand-sm">

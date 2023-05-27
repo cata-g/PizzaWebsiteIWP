@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function InfoDetails() {
   return (
@@ -21,10 +24,31 @@ export default function InfoDetails() {
         </div>
         <div className="col-md-3">
           {" "}
-          <button className="button1">Our Menu</button>
+          <Link
+                className="btn btn-outline-light btn-lg button1 "
+                role="button"
+                style={{
+                  fontFamily: "Varela Round, sans-serif",
+                  fontSize: "16px",
+                }}
+                to="/menu"
+              >
+                Our Menu 
+                
+              </Link>
         </div>
         <div className="col-md-3">
-          <button className="button1">Create Your Own</button>
+        <Link
+                className="btn btn-outline-light btn-lg button1"
+                role="button"
+                style={{
+                  fontFamily: "Varela Round, sans-serif",
+                  fontSize: "16px",
+                }}
+                to="/create-your-own"
+              >
+                Take Me There   
+              </Link>
         </div>
       </div>
     </div>

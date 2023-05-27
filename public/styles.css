@@ -46,7 +46,7 @@ h1 {
   min-height: 40px;
   min-width: 0px;
   overflow: hidden;
-  padding: 0px;
+  padding: 2px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
@@ -79,6 +79,63 @@ h1 {
 }
 
 .button1::shadow {
+  background-color: var(--primary);
+  filter: blur(12px);
+  border-radius: 30px;
+}
+
+/* hero button */
+.buttonhero {
+  align-items: center;
+  background-color: var(--primary);
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: var(--white-text);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 100%;
+  justify-content: center;
+  line-height: 20px;
+  width: 200px;
+  overflow: hidden;
+  padding: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  box-shadow: var(--primary) 0px 0px 6px 1px;
+  letter-spacing: 0.1em;
+}
+
+.buttonhero:hover,
+.buttonhero:focus {
+  background-color: #e46600;
+  color: var(--white-text);
+}
+
+.buttonhero:active {
+  background: var(--primary);
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.buttonhero:disabled {
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.buttonhero::shadow {
   background-color: var(--primary);
   filter: blur(12px);
   border-radius: 30px;
@@ -262,3 +319,4 @@ p.powered-by:hover {
     float: none;
   }
 }
+

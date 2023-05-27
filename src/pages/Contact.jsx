@@ -7,6 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
+import Swal from "sweetalert2";
+import "animate.css/animate.min.css";
+
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -137,7 +140,11 @@ export default function Contact() {
                       subject === "" ||
                       message === ""
                     )
-                      alert("Please Complete All The Fields");
+                      Swal.fire({
+                      icon: 'error',
+                      title: 'FILS says oops...',
+                      text: 'Please fill out all fields!',
+                    })
                     else {
                       const messageobj = {
                         nameFrom: name,
@@ -157,7 +164,15 @@ export default function Contact() {
                         setEmail("");
                         setSubject("");
                         setMessage("");
-                        alert("Message Sent!!!");
+                        Swal.fire({
+                        title: 'Thank you for contacting us!',
+                        showClass: {
+                          popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                          popup: 'animate__animated animate__fadeOutUp'
+                        }
+                      })
                       });
                     }
                   }}

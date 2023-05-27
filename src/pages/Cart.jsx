@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Copyright from "../components/Copyright";
 import FinishOrderModal from "../components/FinishOrderModal";
+import Swal from "sweetalert2";
 
 export default function Cart({ cartItems, deleteFromCart, clearCartItems }) {
   const [isModalShown, setIsModalShwon] = useState(false);
@@ -51,8 +52,25 @@ export default function Cart({ cartItems, deleteFromCart, clearCartItems }) {
                     <button
                       className="btn btn-outline-danger"
                       onClick={() => {
-                        deleteFromCart(index);
                         console.log(cartItems);
+                        Swal.fire({
+                          title: 'Are you sure?',
+                          text: "You won't be able to revert this!",
+                          icon: 'warning',
+                          showCancelButton: true,
+                          confirmButtonColor: '#3085d6',
+                          cancelButtonColor: '#d33',
+                          confirmButtonText: 'Yes, delete it!'
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            deleteFromCart(index);
+                            Swal.fire(
+                              'Deleted!',
+                              'Your file has been deleted.',
+                              'success'
+                            )
+                          }
+                        })
                       }}
                     >
                       Delete Me
