@@ -39,6 +39,7 @@ export default function Menu({ addToCartFunction }) {
           })}
         </div>
       </div>
+
       <Footer />
       <Copyright />
     </>

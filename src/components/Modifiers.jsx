@@ -52,26 +52,26 @@ export default function Modifiers({
         <div class="card card-body">
           <SizeButton
             text="Small"
-            id="smallPizza"
-            functionOnClick={() => setSelectedSizeFunction("smallPizza")}
+            id="S"
+            functionOnClick={() => setSelectedSizeFunction("S")}
             selectedSize={selectedSizeValue}
           />
           <SizeButton
             text="Medium"
-            id="mediumPizza"
-            functionOnClick={() => setSelectedSizeFunction("mediumPizza")}
+            id="M"
+            functionOnClick={() => setSelectedSizeFunction("M")}
             selectedSize={selectedSizeValue}
           />
           <SizeButton
             text="Large"
-            id="largePizza"
-            functionOnClick={() => setSelectedSizeFunction("largePizza")}
+            id="L"
+            functionOnClick={() => setSelectedSizeFunction("L")}
             selectedSize={selectedSizeValue}
           />
           <SizeButton
             text="Extra Large"
-            id="xlPizza"
-            functionOnClick={() => setSelectedSizeFunction("xlPizza")}
+            id="XL"
+            functionOnClick={() => setSelectedSizeFunction("XL")}
             selectedSize={selectedSizeValue}
           />
         </div>

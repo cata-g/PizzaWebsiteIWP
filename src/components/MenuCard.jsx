@@ -42,6 +42,8 @@ export default function MenuCard({
               description: ingredients,
               img: imgSrc,
             });
+
+            alert(name + " added to cart! Go to checkout!");
           }}
         >
           Add to Cart

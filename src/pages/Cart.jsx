@@ -1,36 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Copyright from "../components/Copyright";
+import FinishOrderModal from "../components/FinishOrderModal";
 
-export default function Cart({ cartItems, deleteFromCart }) {
+export default function Cart({ cartItems, deleteFromCart, clearCartItems }) {
+  const [isModalShown, setIsModalShwon] = useState(false);
+  const handleClose = () => setIsModalShwon(false);
+  const handleOpen = () => setIsModalShwon(true);
+
   return (
     <>
       <Navbar />
-      {cartItems.length == 0 ? (
-        <h1>Cart is Empty</h1>
-      ) : (
-        cartItems.map((itm, index) => {
-          return (
-            <div key={index}>
-              <h1>
-                {index}
-                {itm.name}
-              </h1>
-              <p>{itm.description}</p>
-              <button
-                className="btn btn-danger"
-                onClick={() => {
-                  deleteFromCart(index);
-                  console.log(cartItems);
-                }}
-              >
-                Delete Me
-              </button>
-            </div>
-          );
-        })
-      )}
+      <div
+        className="container p-5"
+        style={{
+          backgroundColor: "white",
+          borderRadius: "20px",
+        }}
+      >
+        {cartItems.length == 0 && <h1>Cart is Empty</h1>}
+        <table className="table">
+          <thead className="table-dark">
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Size</th>
+              <th>Ingredients</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cartItems.map((itm, index) => {
+              return (
+                <tr key={index}>
+                  <td>
+                    {" "}
+                    <img
+                      src={require("../static/images/pizzas_menu/" + itm.img)}
+                      style={{
+                        width: "50px",
+                        height: "40px",
+                      }}
+                    />
+                  </td>
+                  <td>{itm.name}</td>
+                  <td>{itm.size}</td>
+                  <td>{itm.description}</td>
+                  <td>
+                    <button
+                      className="btn btn-outline-danger"
+                      onClick={() => {
+                        deleteFromCart(index);
+                        console.log(cartItems);
+                      }}
+                    >
+                      Delete Me
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        {cartItems.length !== 0 && (
+          <div className="p-2 mt-5">
+            <button className="btn button1 float-end" onClick={handleOpen}>
+              Finish Order
+            </button>
+          </div>
+        )}
+      </div>
+      <FinishOrderModal
+        isShown={isModalShown}
+        close={handleClose}
+        cart={cartItems}
+        clearCart={clearCartItems}
+      />
       <Footer />
       <Copyright />
     </>

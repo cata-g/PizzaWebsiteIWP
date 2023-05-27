@@ -26,6 +26,9 @@ function App() {
     setCart(tempCart);
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
   return (
     <BrowserRouter>
       <Routes>
@@ -39,7 +42,13 @@ function App() {
         <Route path="menu" element={<Menu addToCartFunction={addToCart} />} />
         <Route
           path="cart"
-          element={<Cart cartItems={cart} deleteFromCart={deleteFromCart} />}
+          element={
+            <Cart
+              cartItems={cart}
+              deleteFromCart={deleteFromCart}
+              clearCartItems={clearCart}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

@@ -8,7 +8,7 @@ import Modifiers from "../components/Modifiers";
 import pizzaGoala from "../static/images/pizza_toppings/pizza_goala.png";
 import { useNavigate } from "react-router-dom";
 export default function CreateYourOwn({ addToCartFunction }) {
-  const [selectedSize, setSelectedSize] = useState("smallPizza");
+  const [selectedSize, setSelectedSize] = useState("S");
   const [isAvocado, setIsAvocado] = useState(true);
   const [isCheese, setIsCheese] = useState(true);
   const [isMushrooms, setIsMushrooms] = useState(true);
@@ -75,7 +75,7 @@ export default function CreateYourOwn({ addToCartFunction }) {
             if (isOlives) ingredients += "Olives,";
             if (isTomatoes) ingredients += "Tomatoes,";
             var pizzaSize = selectedSize;
-            var imageSource = pizzaGoala;
+            var imageSource = "pizza_goala.png";
 
             addToCartFunction({
               name: pizzaName,
