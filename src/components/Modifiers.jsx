@@ -17,79 +17,82 @@ export default function Modifiers({
   isMushrooms,
   isOlives,
   isTomatoes,
+  setSelectedSizeFunction,
+  selectedSizeValue,
 }) {
-  const [selectedSize, setSelectedSize] = useState("smallPizza");
-
   return (
     <div className="col-md-6 p-5">
       <div class="p-3">
-      <h1 
-      style={{
-        fontFamily: "Varela Round, sans-serif"
-      }}
-      >What will be on your pizza?</h1>
+        <h1
+          style={{
+            fontFamily: "Varela Round, sans-serif",
+          }}
+        >
+          What will be on your pizza?
+        </h1>
       </div>
-      
-      <div class="p-3"><h3
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseSizes"
-        aria-expanded="false"
-        aria-controls="collapseSizes"
-        style={{
-          overflowY: "hidden",
-          fontFamily: "Yanone Kaffeesatz, sans-serif"
-        }}
-      >
-        Sizes
-      </h3>
+
+      <div class="p-3">
+        <h3
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseSizes"
+          aria-expanded="false"
+          aria-controls="collapseSizes"
+          style={{
+            overflowY: "hidden",
+            fontFamily: "Yanone Kaffeesatz, sans-serif",
+          }}
+        >
+          Sizes
+        </h3>
       </div>
-      
+
       <div class="collapse" id="collapseSizes">
         <div class="card card-body">
           <SizeButton
             text="Small"
             id="smallPizza"
-            functionOnClick={() => setSelectedSize("smallPizza")}
-            selectedSize={selectedSize}
+            functionOnClick={() => setSelectedSizeFunction("smallPizza")}
+            selectedSize={selectedSizeValue}
           />
           <SizeButton
             text="Medium"
             id="mediumPizza"
-            functionOnClick={() => setSelectedSize("mediumPizza")}
-            selectedSize={selectedSize}
+            functionOnClick={() => setSelectedSizeFunction("mediumPizza")}
+            selectedSize={selectedSizeValue}
           />
           <SizeButton
             text="Large"
             id="largePizza"
-            functionOnClick={() => setSelectedSize("largePizza")}
-            selectedSize={selectedSize}
+            functionOnClick={() => setSelectedSizeFunction("largePizza")}
+            selectedSize={selectedSizeValue}
           />
           <SizeButton
             text="Extra Large"
             id="xlPizza"
-            functionOnClick={() => setSelectedSize("xlPizza")}
-            selectedSize={selectedSize}
+            functionOnClick={() => setSelectedSizeFunction("xlPizza")}
+            selectedSize={selectedSizeValue}
           />
         </div>
       </div>
 
-        <div class="p-3">
-          <h3
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseIngredients"
-        aria-expanded="false"
-        aria-controls="collapseIngredients"
-        style={{
-          overflowY: "hidden",
-          fontFamily: "Yanone Kaffeesatz, sans-serif"
-        }}
-      >
-        Ingredients
-      </h3>
+      <div class="p-3">
+        <h3
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseIngredients"
+          aria-expanded="false"
+          aria-controls="collapseIngredients"
+          style={{
+            overflowY: "hidden",
+            fontFamily: "Yanone Kaffeesatz, sans-serif",
+          }}
+        >
+          Ingredients
+        </h3>
       </div>
-      
+
       <div class="collapse" id="collapseIngredients">
         <div class="card card-body">
           <IngredientButton

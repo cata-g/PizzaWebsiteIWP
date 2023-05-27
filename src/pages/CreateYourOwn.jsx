@@ -5,14 +5,19 @@ import Footer from "../components/Footer";
 
 import PizzaSelector from "../components/PizzaSelector";
 import Modifiers from "../components/Modifiers";
-export default function CreateYourOwn() {
-  const [isAvocado, setIsAvocado] = useState(false);
-  const [isCheese, setIsCheese] = useState(false);
-  const [isMushrooms, setIsMushrooms] = useState(false);
-  const [isJalapenos, setIsJalapenos] = useState(false);
-  const [isOlives, setIsOlives] = useState(false);
-  const [isHam, setIsHam] = useState(false);
-  const [isTomatoes, setIsTomatoes] = useState(false);
+import pizzaGoala from "../static/images/pizza_toppings/pizza_goala.png";
+import { useNavigate } from "react-router-dom";
+export default function CreateYourOwn({ addToCartFunction }) {
+  const [selectedSize, setSelectedSize] = useState("smallPizza");
+  const [isAvocado, setIsAvocado] = useState(true);
+  const [isCheese, setIsCheese] = useState(true);
+  const [isMushrooms, setIsMushrooms] = useState(true);
+  const [isJalapenos, setIsJalapenos] = useState(true);
+  const [isOlives, setIsOlives] = useState(true);
+  const [isHam, setIsHam] = useState(true);
+  const [isTomatoes, setIsTomatoes] = useState(true);
+
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -44,6 +49,8 @@ export default function CreateYourOwn() {
             isMushrooms={isMushrooms}
             isOlives={isOlives}
             isTomatoes={isTomatoes}
+            setSelectedSizeFunction={setSelectedSize}
+            selectedSizeValue={selectedSize}
           />
           <PizzaSelector
             isAvocado={isAvocado}
@@ -55,7 +62,33 @@ export default function CreateYourOwn() {
             isTomatoes={isTomatoes}
           />
         </div>
-        <button className="button1 float-end btn clearfix">Finish Order</button>
+        <button
+          className="button1 float-end btn clearfix"
+          onClick={() => {
+            var pizzaName = "Custom Pizza";
+            var ingredients = "";
+            if (isAvocado) ingredients += "Avocado,";
+            if (isCheese) ingredients += "Cheese,";
+            if (isHam) ingredients += "Ham,";
+            if (isJalapenos) ingredients += "Jalapenos,";
+            if (isMushrooms) ingredients += "Mushrooms,";
+            if (isOlives) ingredients += "Olives,";
+            if (isTomatoes) ingredients += "Tomatoes,";
+            var pizzaSize = selectedSize;
+            var imageSource = pizzaGoala;
+
+            addToCartFunction({
+              name: pizzaName,
+              description: ingredients,
+              size: pizzaSize,
+              img: imageSource,
+            });
+
+            navigate("/cart");
+          }}
+        >
+          Finish Order
+        </button>
       </div>
       <Footer />
       <Copyright />

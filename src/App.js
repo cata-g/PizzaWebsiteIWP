@@ -30,7 +30,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<MainPage />} />
-        <Route path="create-your-own" element={<CreateYourOwn />} />
+        <Route
+          path="create-your-own"
+          element={<CreateYourOwn addToCartFunction={addToCart} />}
+        />
         <Route path="contact" element={<Contact />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="menu" element={<Menu addToCartFunction={addToCart} />} />

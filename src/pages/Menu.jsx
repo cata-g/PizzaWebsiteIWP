@@ -29,6 +29,7 @@ export default function Menu({ addToCartFunction }) {
             return (
               <MenuCard
                 name={item.name}
+                size={item.size}
                 imgSrc={item.imageSource}
                 ingredients={item.ingredients}
                 key={item.id}

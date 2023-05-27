@@ -59,8 +59,8 @@ export default function Navbar() {
                 />
               </Link>
             </div>
-            <div className="col-md-9">
-              <Link className="button1 p-2 btn" to="/menu">
+            <div className="col-md-8 p-2">
+              <Link className="btn button1" to="/menu">
                 Order Now
               </Link>
             </div>

@@ -12,6 +12,7 @@ export default function IngredientButton({ text, id, changer, whatToChange }) {
           changer(!whatToChange);
           console.log(whatToChange);
         }}
+        checked={whatToChange}
       />
       <label class="form-check-label" for={id}>
         {text}
