@@ -54,23 +54,23 @@ export default function Cart({ cartItems, deleteFromCart, clearCartItems }) {
                       onClick={() => {
                         console.log(cartItems);
                         Swal.fire({
-                          title: 'Are you sure?',
+                          title: "Are you sure?",
                           text: "You won't be able to revert this!",
-                          icon: 'warning',
+                          icon: "warning",
                           showCancelButton: true,
-                          confirmButtonColor: '#3085d6',
-                          cancelButtonColor: '#d33',
-                          confirmButtonText: 'Yes, delete it!'
+                          confirmButtonColor: "#ff7300",
+                          cancelButtonColor: "#d33",
+                          confirmButtonText: "Yes, delete it!",
                         }).then((result) => {
                           if (result.isConfirmed) {
                             deleteFromCart(index);
                             Swal.fire(
-                              'Deleted!',
-                              'Your file has been deleted.',
-                              'success'
-                            )
+                              "Deleted!",
+                              "Your file has been deleted.",
+                              "success"
+                            );
                           }
-                        })
+                        });
                       }}
                     >
                       Delete Me

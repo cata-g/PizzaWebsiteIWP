@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function FinishOrderModal({ isShown, close, cart, clearCart }) {
   const [email, setEmail] = useState("");
@@ -90,7 +91,12 @@ export default function FinishOrderModal({ isShown, close, cart, clearCart }) {
               phoneNumber === "" ||
               deliveryLocation === ""
             )
-              alert("Please complete all the mandatory fields!");
+              Swal.fire({
+                icon: "error",
+                title: "FILS says oops...",
+                text: "Please fill out all fields!",
+                confirmButtonColor: "#ff7300",
+              });
             else {
               let pizzaNames = "";
               let pizzaSizes = "";
@@ -116,7 +122,12 @@ export default function FinishOrderModal({ isShown, close, cart, clearCart }) {
                 },
                 body: JSON.stringify(order),
               }).then(() => {
-                alert("Thank You For Your Order! See you soon!");
+                Swal.fire({
+                  icon: "success",
+                  title: "See you soon!",
+                  text: "Thank you for your order!",
+                  confirmButtonColor: "#ff7300",
+                });
                 clearCart();
                 navigation("/");
               });

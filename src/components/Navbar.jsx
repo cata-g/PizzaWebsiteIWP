@@ -3,6 +3,8 @@ import NavbarLink from "./NavbarLink";
 import { Link, Outlet } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import logo from "../static/images/logo.png";
+
 export default function Navbar() {
   const [links, setLinks] = useState([]);
   useEffect(() => {
@@ -22,17 +24,16 @@ export default function Navbar() {
       <div className="row">
         <div className="col-md-1">
           {/* image */}
-          <Link to="/">
+          <Link to="/" className="p-3">
             <img
-              src="https://i.imgur.com/GNrd9z0.png"
+              src={logo}
               alt="logo"
               style={{
-                width: "100%",
-                height: "100%",
+                width: "80%",
+                height: "80%",
               }}
             />
           </Link>
-
         </div>
         <div className="col-md-10">
           <nav className="navbar navbar-expand-sm">

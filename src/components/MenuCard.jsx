@@ -44,11 +44,12 @@ export default function MenuCard({
               description: ingredients,
               img: imgSrc,
             });
-
             Swal.fire({
-              title: 'Added to Cart!',
-              text: 'Check your cart to see your order',
-            })
+              icon: "success",
+              title: "Added to Cart!",
+              text: "Check your cart to see your order",
+              confirmButtonColor: "#ff7300",
+            });
           }}
         >
           Add to Cart

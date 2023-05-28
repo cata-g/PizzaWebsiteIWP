@@ -1,8 +1,13 @@
 * {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .App {
   text-align: center;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 body {

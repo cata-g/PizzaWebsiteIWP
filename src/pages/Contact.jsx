@@ -141,10 +141,11 @@ export default function Contact() {
                       message === ""
                     )
                       Swal.fire({
-                      icon: 'error',
-                      title: 'FILS says oops...',
-                      text: 'Please fill out all fields!',
-                    })
+                        icon: "error",
+                        title: "FILS says oops...",
+                        text: "Please fill out all fields!",
+                        confirmButtonColor: "#ff7300",
+                      });
                     else {
                       const messageobj = {
                         nameFrom: name,
@@ -165,14 +166,14 @@ export default function Contact() {
                         setSubject("");
                         setMessage("");
                         Swal.fire({
-                        title: 'Thank you for contacting us!',
-                        showClass: {
-                          popup: 'animate__animated animate__fadeInDown'
-                        },
-                        hideClass: {
-                          popup: 'animate__animated animate__fadeOutUp'
-                        }
-                      })
+                          title: "Thank you for contacting us!",
+                          showClass: {
+                            popup: "animate__animated animate__fadeInDown",
+                          },
+                          hideClass: {
+                            popup: "animate__animated animate__fadeOutUp",
+                          },
+                        });
                       });
                     }
                   }}
