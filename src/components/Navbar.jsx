@@ -20,63 +20,76 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div>
-      <div className="row">
-        <div className="col-md-1">
-          {/* image */}
-          <Link to="/" className="p-3">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse justify-content-start">
+          <Link to="/">
             <img
               src={logo}
               alt="logo"
               style={{
-                width: "80%",
-                height: "80%",
+                width: "60%",
+                height: "60%",
               }}
             />
           </Link>
         </div>
-        <div className="col-md-10">
-          <nav className="navbar navbar-expand-sm">
-            <div
-              className="collapse navbar-collapse justify-content-center"
-              id="navbarNav"
-            >
-              <ul className="navbar-nav">
-                {links.map((item) => {
-                  return (
-                    <NavbarLink
-                      name={item.name}
-                      link={item.href}
-                      key={item.name}
-                    />
-                  );
-                })}
-              </ul>
-            </div>
-            <Outlet />
-          </nav>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarCenteredExample"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            {links.map((item) => {
+              return (
+                <NavbarLink name={item.name} link={item.href} key={item.name} />
+              );
+            })}
+          </ul>
         </div>
-        <div className="col-md-1 mt-3">
-          <div className="row">
-            <div className="col-md-3">
-              <Link to="/cart">
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/cart"
+                style={{
+                  fontFamily: "Yanone Kaffeesatz, sans-serif",
+                  color: "white",
+                  fontSize: "22px",
+                  letterSpacing: "0.05rem",
+                  fontWeight: "400",
+                  textTransform: "uppercase",
+                }}
+              >
                 <FontAwesomeIcon
                   icon={faCartShopping}
                   style={{
                     color: "white",
                   }}
-                  className="mt-3"
                 />
               </Link>
-            </div>
-            <div className="col-md-8 p-2">
-              <Link className="btn button1" to="/menu">
+            </li>
+            <li className="nav-item">
+              <Link
+                className="btn button1"
+                aria-current="page"
+                to="/menu"
+                style={{
+                  fontFamily: "Yanone Kaffeesatz, sans-serif",
+                  color: "white",
+                  fontSize: "22px",
+                  letterSpacing: "0.05rem",
+                  fontWeight: "400",
+                  textTransform: "uppercase",
+                }}
+              >
                 Order Now
               </Link>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function NavbarLink({ name, link }) {
   return (
-    <li className="nav-item p-2">
+    <li className="nav-item">
       <Link
         className="nav-link active"
         aria-current="page"
